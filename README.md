@@ -1,6 +1,21 @@
-# Tailscale 出口节点共享指南
+# Tailscale 出口节点搭建、分流与共享指南
 
 Windows 和 iPhone 都可使用。每个人用自己的 Tailscale 账号。
+
+## 为什么用 Tailscale 自建出口节点
+
+有一台已经能访问互联网的 VPS，又希望自己的电脑、手机或受邀好友共用它的公网出口时，Tailscale 可以把设备接进同一个受控网络。客户端使用自己的账号接入，出口由后台批准，不需要把代理密码或管理面板公开给好友。设备能直连时优先直连；直连不可用时还可能通过 DERP 中继。
+
+| 需求 | 用法 |
+| --- | --- |
+| 临时让 Windows 或 iPhone 整机经 VPS 上网 | 在 Tailscale 选择 Exit Node |
+| Windows 上大陆网站直连、其他网站经 VPS | Tailscale 只连接尾网，FlClash/Mihomo 做分流 |
+| 只把这台 VPS 分享给好友 | 在后台单独共享出口节点，逐人发邀请 |
+
+Tailscale 出口节点默认接管互联网流量。国内外分流、登录默认线路、WebRTC 防泄漏是另外几层设置。VPS 的公网出口是否稳定、终端到 VPS 能否直连，仍需实际测试。
+
+- [从零创建 Tailscale Exit Node](SETUP.md) · Linux 搭建、后台批准、客户端配置和分流 YAML。
+- [使用、排障与迁移手册](OPERATIONS.md) · 选型、DERP、测速、Windows 自启动、WebRTC、共享安全、内存与回滚。
 
 ## 怎么创建 Tailscale 出口节点（Linux VPS）
 
