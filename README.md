@@ -21,3 +21,6 @@ Windows 和 iPhone 都可使用。每个人用自己的 Tailscale 账号。
 - [使用出口节点](https://tailscale.com/docs/features/exit-nodes/how-to/setup)
 - [共享设备与出口节点](https://tailscale.com/docs/features/sharing)
 
+## 自建教程
+
+[从零搭建 Tailscale 出口节点](SETUP.md)
